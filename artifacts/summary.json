@@ -1,0 +1,50 @@
+{
+  "xgboost": {
+    "oof_log_loss": 1.0407517602495773,
+    "fold_losses": [
+      1.07983901081851,
+      1.0770322763560551,
+      1.0760929958813796,
+      1.0624472243923209,
+      1.076608192746582
+    ],
+    "elapsed_sec": 489.9,
+    "artifact_dir": ".\\PrefRank\\artifacts\\xgboost"
+  },
+  "lightgbm": {
+    "oof_log_loss": 1.041570398427337,
+    "fold_losses": [
+      1.1095513228209868,
+      1.1051127617321352,
+      1.1062686951214948,
+      1.0899002935857498,
+      1.1034978577187002
+    ],
+    "elapsed_sec": 351.1,
+    "artifact_dir": ".\\PrefRank\\artifacts\\lightgbm"
+  },
+  "random_forest": {
+    "oof_log_loss": 1.033572987715576,
+    "fold_losses": [
+      1.0389257330354502,
+      1.038545865655886,
+      1.0335971353821267,
+      1.0296176522304308,
+      1.038014979372936
+    ],
+    "elapsed_sec": 260.3,
+    "artifact_dir": ".\\PrefRank\\artifacts\\random_forest"
+  },
+  "mlp": {
+    "oof_log_loss": 1.0330053075199535,
+    "fold_losses": [
+      1.0382916621222134,
+      1.036763133461705,
+      1.0342453319196894,
+      1.0299887536262968,
+      1.0355664129717148
+    ],
+    "elapsed_sec": 330.6,
+    "artifact_dir": ".\\PrefRank\\artifacts\\mlp"
+  }
+}

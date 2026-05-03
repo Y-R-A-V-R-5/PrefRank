@@ -1,0 +1,55 @@
+# PrefRank – unified config
+# Run:  python scripts/train.py
+#       python scripts/train.py --models xgboost lightgbm
+#       python scripts/train.py --gpu
+
+data:
+  train_path: data/train.csv
+  test_path:  data/test.csv
+  label_col:  winner
+
+features:
+  linguistic:         true   # readability, length, structure, A-B contrast
+  tfidf_sim:          true   # TF-IDF cosine similarity (prompt↔A, prompt↔B, A↔B)
+  tfidf_max_features: 10000
+
+training:
+  n_folds:     5
+  seed:        42
+  calibration: isotonic     # isotonic | platt | none
+
+# ── Model 1: XGBoost ─────────────────────────────────────────────────────────
+xgboost:
+  n_estimators:          2000
+  learning_rate:         0.05
+  max_depth:             6
+  subsample:             0.8
+  colsample_bytree:      0.8
+  early_stopping_rounds: 100
+
+# ── Model 2: LightGBM ────────────────────────────────────────────────────────
+lightgbm:
+  n_estimators:     2000
+  learning_rate:    0.05
+  num_leaves:       63
+  subsample:        0.8
+  colsample_bytree: 0.8
+
+# ── Model 3: Random Forest ───────────────────────────────────────────────────
+random_forest:
+  n_estimators:     500
+  max_depth:        20
+  min_samples_leaf: 4
+
+# ── Model 4: MLP Neural Network ──────────────────────────────────────────────
+mlp:
+  hidden_layers: [512, 256, 128]
+  dropout:       0.3
+  learning_rate: 1.0e-3
+  weight_decay:  1.0e-4
+  epochs:        50
+  batch_size:    512
+  patience:      5
+
+# ── Artifacts & output ───────────────────────────────────────────────────────
+artifacts_dir: artifacts

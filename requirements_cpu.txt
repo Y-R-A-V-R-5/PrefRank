@@ -1,0 +1,16 @@
+# PrefRank – CPU  (Python 3.10+)
+# pip install -r requirements_cpu.txt
+
+numpy>=1.26,<2.0
+pandas>=2.1
+scikit-learn>=1.4
+xgboost>=2.0
+lightgbm>=4.3
+torch>=2.2                  # CPU wheel (default pip index)
+pyyaml>=6.0
+tqdm>=4.66
+textstat>=0.7
+scipy>=1.13
+matplotlib>=3.8
+seaborn>=0.13
+joblib>=1.4

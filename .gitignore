@@ -1,0 +1,55 @@
+# ── Data ──────────────────────────────────────────────────────────────────────
+data/*.csv
+data/*.parquet
+data/*.json
+data/*.pkl
+!data/.gitkeep
+
+# ── Python ────────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# ── Environments ──────────────────────────────────────────────────────────────
+.env
+.venv
+env/
+venv/
+
+# ── Jupyter ───────────────────────────────────────────────────────────────────
+.ipynb_checkpoints/
+
+# ── Experiment artefacts (large binaries) ─────────────────────────────────────
+experiments/**/models/*.cbm
+experiments/**/models/*.pkl
+experiments/**/models/*.bin
+experiments/**/checkpoints/*.pt
+experiments/**/checkpoints/*.pth
+experiments/**/*.npy
+experiments/**/submission*.csv
+!experiments/**/.gitkeep
+!experiments/**/metrics/*.json
+
+# ── Results (auto-generated; commit so reviewers skip re-running notebooks) ───
+results/**/*.png
+results/**/*.csv
+results/**/*.html
+
+# ── Logs ──────────────────────────────────────────────────────────────────────
+*.log
+logs/
+
+# ── IDE ───────────────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+
+# ── OS ────────────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+
+# ── Kaggle ────────────────────────────────────────────────────────────────────
+kaggle.json
