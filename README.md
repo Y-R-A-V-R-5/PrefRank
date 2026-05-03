@@ -41,13 +41,17 @@ The evaluation metric is **multi-class log-loss**. Log-loss penalises confident 
 
 ## 2. Dataset
 
+The dataset for this project is sourced from the Kaggle competition: 
+**[LLM Classification Finetuning](https://www.kaggle.com/competitions/llm-classification-finetuning/data)**.
+
 - **Training set:** `data/train.csv` — columns: `id`, `prompt`, `response_a`, `response_b`, `winner`
 - **Test set:** `data/test.csv` — columns: `id`, `prompt`, `response_a`, `response_b`
 - Labels may appear as a single `winner` column or as three one-hot columns (`winner_model_a`, `winner_model_b`, `winner_tie`); the pipeline handles both automatically.
 
 Total samples across all folds: **~57,400** (inferred from confusion matrix totals).
 
-Class distribution (approximate from OOF confusion matrices):
+### Class Distribution
+(Approximate from OOF confusion matrices):
 
 | Class | Approx. Count | Share |
 |-------|--------------|-------|
